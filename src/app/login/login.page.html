@@ -1,0 +1,27 @@
+<ion-content class="primary-background-color">
+    <div class="logo">
+        <ion-img src="assets/logo/logo.png"></ion-img>
+    </div>
+    <form [formGroup]="loginForm" class="ion-padding">
+        <div class="ion-padding-horizontal">
+            <ion-input type="text" formControlName="email" placeholder="Email"><ion-icon name="mail"  class="ion-padding"></ion-icon></ion-input>
+        </div>
+        <div class="validation-errors ion-padding">
+            <div class="error-message" *ngIf="loginForm.get('email').hasError('validateemail')">
+                <ion-icon name="information-circle-outline"></ion-icon> Enter valid email
+            </div>
+        </div>
+      
+        <div class="ion-padding-horizontal">
+            <ion-input type="password" formControlName="password" placeholder="Password"><ion-icon name="lock-closed-outline" class="ion-padding"></ion-icon></ion-input>
+        </div>
+        <div class="validation-errors ion-padding">
+            <div class="error-message" *ngIf="loginForm.get('password').hasError('validatepassword')">
+                <ion-icon name="information-circle-outline"></ion-icon> Enter Valid Password
+            </div>
+        </div>
+        <p class="ion-padding-horizontal" routerLink="/register">Forget password?</p>
+        <ion-button expand="block" class="submit-btn ion-padding-horizontal" expand="full" type="submit" [disabled]="!loginForm.valid">Login</ion-button>
+        <ion-button expand="block" class="ion-padding" expand="full" routerLink="/register">Register</ion-button>
+    </form>
+</ion-content>

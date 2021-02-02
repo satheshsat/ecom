@@ -1,0 +1,49 @@
+<ion-content class="primary-background-color">
+    <div class="logo">
+        <ion-img src="assets/logo/logo.png"></ion-img>
+    </div>
+    <form [formGroup]="registerForm" class="ion-padding">
+
+        <div class="ion-padding-horizontal">
+          <ion-input type="text" formControlName="name" placeholder="Name"><ion-icon name="person" class="ion-padding"></ion-icon></ion-input>
+        </div>
+        <div class="validation-errors ion-padding">
+          <div class="error-message" *ngIf="registerForm.get('name').hasError('validatename')">
+            <ion-icon name="information-circle-outline"></ion-icon> Enter Valid name
+          </div>
+        </div>
+    
+        <div class="ion-padding-horizontal">
+          <ion-input type="text" formControlName="email" placeholder="Email"><ion-icon name="mail" class="ion-padding"></ion-icon></ion-input>
+        </div>
+        <div class="validation-errors ion-padding">
+          <div class="error-message" *ngIf="registerForm.get('email').hasError('validateemail')">
+            <ion-icon name="information-circle-outline"></ion-icon> Enter Valid Email
+          </div>
+        </div>
+    
+        <div class="ion-padding-horizontal">
+          <ion-input type="password" formControlName="password" placeholder="Password"><ion-icon name="lock-closed-outline" class="ion-padding"></ion-icon></ion-input>
+        </div>
+        <div class="validation-errors ion-padding">
+          <div class="error-message" *ngIf="registerForm.get('password').hasError('validatepassword')">
+            <ion-icon name="information-circle-outline"></ion-icon> Enter Valid Password
+          </div>
+        </div>
+    
+        <div class="ion-padding-horizontal">
+          <ion-input type="password" formControlName="reenterpassword" placeholder="Confirm password"><ion-icon name="lock-closed-outline" class="ion-padding"></ion-icon></ion-input>
+        </div>
+        <div class="validation-errors ion-padding">
+          <div class="error-message" *ngIf="registerForm.get('reenterpassword').hasError('validateconfirmPassword')">
+            <ion-icon name="information-circle-outline"></ion-icon> Enter Valid Password
+          </div>
+          <div class="error-message" *ngIf="registerForm.get('reenterpassword').hasError('passwordMismatch')">
+            <ion-icon name="information-circle-outline"></ion-icon> Password Mismatch
+          </div>
+        </div>
+    
+        <ion-button expand="block" class="submit-btn ion-padding-horizontal" expand="full" type="submit" [disabled]="!registerForm.valid">Register</ion-button>
+        <ion-button expand="block" class="ion-padding" expand="full" routerLink="/login">Login</ion-button>
+    </form>
+</ion-content>

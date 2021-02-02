@@ -1,0 +1,17 @@
+.logo{
+    padding: 15px 0px 15px 0px;
+}
+
+form ion-input{
+    padding: 3px;
+    border-radius: 5px;
+    border: 2px solid white;
+}
+
+form ion-button::part(native){
+    border-radius: 5px;
+}
+
+.validation-errors{
+    font-size: 15px;
+}

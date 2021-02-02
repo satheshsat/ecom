@@ -1,0 +1,6 @@
+ion-content .quantity::part(native){
+    background-color: transparent;
+}
+ion-content .quantity ion-input{
+    max-width: 25px;
+}
