@@ -21,11 +21,11 @@
 
   <ion-item class="background-transparent quantity">
     <ion-title class="ion-text-center secondary-text-color">Quantity</ion-title>
-    <ion-button size="small" icon-only slot="end" class="primary-background-color">
+    <ion-button (click)="quantity = quantity-1" size="small" icon-only slot="end" class="primary-background-color">
       <ion-icon class="primary-text-color" name="remove-outline"></ion-icon>
     </ion-button>
-    <ion-input slot="end" type="number" class="secondary-text-color" min=1 value=1></ion-input>
-    <ion-button size="small" icon-only slot="end" class="primary-background-color">
+    <ion-input slot="end" type="number" class="secondary-text-color" min=1 [value]="quantity"></ion-input>
+    <ion-button (click)="quantity = quantity+1" size="small" icon-only slot="end" class="primary-background-color">
       <ion-icon class="primary-text-color" name="add-outline"></ion-icon>
     </ion-button>
   </ion-item>
